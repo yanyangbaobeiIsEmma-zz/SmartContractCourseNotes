@@ -10,7 +10,7 @@ eg: 传统员工薪酬支付系统
 * 问题： - 人力陈本； - 信任问题（拖欠工资）
 * 目标：1. 高效低成本；2. 防止违约
 
-### Solodity
+### Solidity
 静态系统
 * Bool: true, false, !, &&, ...
 * UINT/INT: <=, &, |, +, ...
@@ -69,10 +69,10 @@ ETHER 单位
 * 老董每月通过合约给frank打钱
 * 如何防止老董拖欠frank工资
 * 在合约上存钱, frank在每30天领取薪水
-* - function addFund
-* - function calculateRunway
-* - function hasEnoughFund
-* - function getPaid
+* function addFund
+* function calculateRunway
+* function hasEnoughFund
+* function getPaid
 
 
 ### 关键词
