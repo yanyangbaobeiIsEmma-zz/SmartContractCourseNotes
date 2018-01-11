@@ -86,7 +86,7 @@ ETHER 单位
 
 
 ### code Example:
-```python
+```C
 pragma solidity ^0.4.14; // version
 
 contract SimpleStorage{ 
