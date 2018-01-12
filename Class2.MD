@@ -107,8 +107,8 @@ contract Payroll {
     }
     
     // note: Employee is only in memory, 
-    // can set "storage Employee" as parameter
-    function _findEmployee(address employeeId) private returns (Employee, uint) {
+    // can set "storage Employee" as parameter if we want to update it in funciton
+    function _findEmployee(address employeeId) private returns (Employee, uint) {
         for (uint i = 0; i < employees.length; i++) {
             if (employees[i].id == employeeId) {
                 return (employees[i], i);
@@ -152,7 +152,6 @@ contract Payroll {
         assert(employee.id != 0x0);
         _partialPaid(employee);
         
-        // employee will point back to the employees[index]
         employees[index].salary = salary;
         employees[index].lastPayday = now;  
     }
