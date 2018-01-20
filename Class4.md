@@ -22,16 +22,12 @@ cd payroll
 truffle init
 ```
 
-![alt text](https://github.com/yanyangbaobeiIsEmma/SmartContractCourseNotes/image/1.png )
+![](https://github.com/yanyangbaobeiIsEmma/SmartContractCourseNotes/blob/master/images/1.png)
 
-contracts/
-migrations/
-test/
-truffle.js
-
-** use VS code, install solidity extended
-
-
+- contracts/
+- migrations/
+- test/
+- truffle.js
 #### truffle.js:
 ``` 
 module.exports = {
@@ -45,7 +41,10 @@ module.exports = {
 };
 ```
 
-### contracts
+#### 编辑IDE
+VS code, install solidity extended
+
+#### contracts
 - ConvertLib.sol (convert to ETH amount)
 - MetaCoin.sol
 - Migrations.sol
@@ -88,23 +87,22 @@ contract MetaCoin {
 }
 
 ```
-### migrations
+#### migrations
 用于部署
-- 1_initial_migration.js
-- 2_deploy_contracts.js
+  - 1_initial_migration.js
+  - 2_deploy_contracts.js
 
-
-### test
+#### test
 用于测试
 
-## Truffle主要命令
+### Truffle主要命令
 * truffle compile
 * truffle migrate
 * truffle console
 * truffle test
 * truffle unbox
 
-### 编译
+#### 编译
 In terminal, under /payroll, run 
 ```
 truffle compile
@@ -114,7 +112,7 @@ new folder /build create!
 - MetaCoin.json
 - Migration.json
 
-### 部署
+#### 部署
 * 客户端
 * TestRPC
     - 基于javascript的区块链“模拟器”
@@ -122,18 +120,24 @@ new folder /build create!
     - 主要用于部署前的测试
 ```
     npm install -g ethereumjs-testrpc
-    testrpc
+```
+```
+  testrpc
+```
+![](https://github.com/yanyangbaobeiIsEmma/SmartContractCourseNotes/blob/master/images/3.png)
+```
     truffle migration // migrate contract to testrpc network
 ```
-[插图1] 
-[插图2]
+![](https://github.com/yanyangbaobeiIsEmma/SmartContractCourseNotes/blob/master/images/2.png)
+
 
 Now run 
 ```
 truffle console 
 
 ```
-we go into JavaScript environment [插图]
+we go into JavaScript environment 
+![](https://github.com/yanyangbaobeiIsEmma/SmartContractCourseNotes/blob/master/images/4.png)
 并且Truffle引入Web3.js
 
 #### WEB3.JS
@@ -143,19 +147,23 @@ we go into JavaScript environment [插图]
 web3.eth.accounts
 
 ```
-[插图] testrpc网络里的所有账户
+![](https://github.com/yanyangbaobeiIsEmma/SmartContractCourseNotes/blob/master/images/5.png)
+testrpc网络里的所有账户
 
 ```
 web3.currentProvider
 
 ```
-[插图] testrpc的provider
+![](https://github.com/yanyangbaobeiIsEmma/SmartContractCourseNotes/blob/master/images/6.png)
+testrpc的provider
 
 交互
 ```
 MetaCoin.deployed()
 MetaCoin.deployed().then(contract => {metacoin = contract})
 metacoin
+```
+![](https://github.com/yanyangbaobeiIsEmma/SmartContractCourseNotes/blob/master/images/10.png)
 
 #### WEB3调用合约方程
 * 方程名.call()
@@ -166,17 +174,20 @@ metacoin.getBalance.call('0xc5ac779f4e931f0cef35ac52aeb5fbea2e1287ea').then((res
 
 metacoin.sendCoin.call('0xebf5c4f90b3b5bfdb4e1c9b320dc466138c2f9ff', 2).then((result) => {console.log(result)})
 
- metacoin.getBalance.call('0xebf5c4f90b3b5bfdb4e1c9b320dc466138c2f9ff').then((result) => {console.log(result)})
+metacoin.getBalance.call('0xebf5c4f90b3b5bfdb4e1c9b320dc466138c2f9ff').then((result) => {console.log(result)})
 
 ```
-*** when we call in web3, just in local node, not eth network, so when we send coin, it is not stored in block chain
+![](https://github.com/yanyangbaobeiIsEmma/SmartContractCourseNotes/blob/master/images/12.png)
+
+!! When we call in web3, just in local node, not eth network, so when we send coin, it is not stored in block chain
 
 We can directly use metacoin.sendCoin(), which is stored in block chain.
 ```
 metacoin.sendCoin('0xebf5c4f90b3b5bfdb4e1c9b320dc466138c2f9ff', 2).then((result) => {console.log(result)})
 
- metacoin.getBalance.call('0xebf5c4f90b3b5bfdb4e1c9b320dc466138c2f9ff').then((result) => {console.log(result)})
+metacoin.getBalance.call('0xebf5c4f90b3b5bfdb4e1c9b320dc466138c2f9ff').then((result) => {console.log(result)})
 ```
+![](https://github.com/yanyangbaobeiIsEmma/SmartContractCourseNotes/blob/master/images/14.png)
 
 ## 前端开发
 * truffle box
@@ -187,26 +198,27 @@ metacoin.sendCoin('0xebf5c4f90b3b5bfdb4e1c9b320dc466138c2f9ff', 2).then((result)
 truffle unbox react
 
 ```
-[插图]
+![](https://github.com/yanyangbaobeiIsEmma/SmartContractCourseNotes/blob/master/images/15.png)
 
 ```
 truffle compile
 
 ```
-*** N.B. view is introduced in solidity 0.4.16 and truffle includes solifity v0.4.15. Need to change the pragma and use 0.4.15 and also remove view in SimpleStorage.sol
+***N.B. view is introduced in solidity 0.4.16 and truffle includes solifity v0.4.15. Need to change the pragma and use 0.4.15 and also remove view in SimpleStorage.sol***
+![](https://github.com/yanyangbaobeiIsEmma/SmartContractCourseNotes/blob/master/images/16.png)
 
 ```
 testrpc
 truffle migration
 ```
-[插图]
+![](https://github.com/yanyangbaobeiIsEmma/SmartContractCourseNotes/blob/master/images/17.png)
 
 然后运行前端程序
 ```
 npm run start
 ```
-[插图]
-[插图]
+![](https://github.com/yanyangbaobeiIsEmma/SmartContractCourseNotes/blob/master/images/18.png)
+![](https://github.com/yanyangbaobeiIsEmma/SmartContractCourseNotes/blob/master/images/19.png)
 
 ### 前端文件夹
      - /src
@@ -278,7 +290,7 @@ contract TestSimpleStorage { // name must start with Test....
 truffle test
 
 ```
-[插图]
+![](https://github.com/yanyangbaobeiIsEmma/SmartContractCourseNotes/blob/master/images/20.png)
 
 ## 总结
 * 安装 truffle
