@@ -12,7 +12,7 @@
 * JuiceBox
 * NVM node
 * 安装Truffle
-* For Mac: [Mac安装帮助文档](https://github.com/yanyangbaobeiIsEmma/SmartContractCourseNotes/blob/master/Mac%E4%B8%8B%E5%AE%89%E8%A3%85truffle%26truffle-react%E8%84%9A%E6%89%8B%E6%9E%B6.pdf)
+* For Mac: [Mac安装帮助文档](https://github.com/yanyangbaobeiIsEmma/SmartContractCourseNotes/blob/master/Mac%E4%B8%8B%E5%AE%89%E8%A3%85truffle%26truffle-react%E8%84%9A%E6%89%8B%E6%9E%B6.pdf) -- better to use the latest version of truffle, seriously.
 
 ### Truffle 运行步骤
 * in terminal:
