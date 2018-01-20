@@ -29,7 +29,7 @@ truffle init
 - test/
 - truffle.js
 #### truffle.js:
-``` 
+``` js
 module.exports = {
   networks: {
     development: {
@@ -50,7 +50,7 @@ VS code, install solidity extended
 - Migrations.sol
 
 MetaCoin.sol
-```
+``` js
 pragma solidity ^0.4.4;
 
 import "./ConvertLib.sol";
@@ -148,6 +148,7 @@ web3.eth.accounts
 
 ```
 ![](https://github.com/yanyangbaobeiIsEmma/SmartContractCourseNotes/blob/master/images/5.png)
+
 testrpc网络里的所有账户
 
 ```
@@ -155,6 +156,8 @@ web3.currentProvider
 
 ```
 ![](https://github.com/yanyangbaobeiIsEmma/SmartContractCourseNotes/blob/master/images/6.png)
+
+
 testrpc的provider
 
 交互
@@ -219,6 +222,10 @@ npm run start
 ```
 ![](https://github.com/yanyangbaobeiIsEmma/SmartContractCourseNotes/blob/master/images/18.png)
 ![](https://github.com/yanyangbaobeiIsEmma/SmartContractCourseNotes/blob/master/images/19.png)
+``` js
+var provider = new Web3.providers.HttpProvider('http://127.0.0.1:8545')
+```
+**Remember to change the port of getWeb3.js to be the same as the one in truffle.js**
 
 ### 前端文件夹
      - /src
@@ -239,7 +246,7 @@ npm run start
 
 
 ### js 前端测试
-```js
+``` js
 
 var SimpleStorage = artifacts.require("./SimpleStorage.sol");
 
@@ -261,7 +268,7 @@ contract('SimpleStorage', function(accounts) {
 ```
 
 ### Solidity测试
-```
+``` js
 pragma solidity ^0.4.2;
 
 import "truffle/Assert.sol";
