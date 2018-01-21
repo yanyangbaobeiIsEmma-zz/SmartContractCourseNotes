@@ -116,8 +116,8 @@ new folder /build create!
 * 客户端
 * TestRPC
     - 基于javascript的区块链“模拟器”
-    - 不需要等待挖矿，所有区块链操作可以瞬间wanc
-    - 主要用于部署前的测试
+    - 不需要等待挖矿，所有区块链操作可以瞬间完成
+    - 主要用于部署前的测试
 ```
     npm install -g ethereumjs-testrpc
 ```
